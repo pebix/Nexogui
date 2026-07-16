@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexoGÜI - Dashboard Principal</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <h2>NexoGÜI</h2>
+                <p class="slogan">Conectamos tu comunidad</p>
+            </div>
+            
+            <nav class="menu">
+                <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="reportar.html"><i class="fa-solid fa-circle-plus"></i> Reportar</a>
+                <a href="foro.html"><i class="fa-solid fa-comments"></i> Foro</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Ajustes</a>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-info">
+                    <span class="username" id="user-name">Cargando...</span>
+                    <span class="role" id="user-role">...</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <h1><i class="fa-solid fa-chart-column"></i> DASHBOARD PRINCIPAL</h1>
+            </header>
+
+            <section class="stats-grid">
+                <div class="card stat-card blue">
+                    <i class="fa-solid fa-file-lines icon"></i>
+                    <div class="stat-data">
+                        <h3 id="stat-reportes">-</h3>
+                        <p>Reportes</p>
+                    </div>
+                </div>
+                <div class="card stat-card green">
+                    <i class="fa-solid fa-circle-check icon"></i>
+                    <div class="stat-data">
+                        <h3 id="stat-resueltos">-</h3>
+                        <p>Resueltos</p>
+                    </div>
+                </div>
+                <div class="card stat-card purple">
+                    <i class="fa-solid fa-clock icon"></i>
+                    <div class="stat-data">
+                        <h3 id="stat-tiempo">-</h3>
+                        <p>días Promedio</p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                
+                <section class="card report-form-card">
+                    <h2><i class="fa-solid fa-bullhorn"></i> NUEVO REPORTE</h2>
+                    <form id="quick-report-form">
+                        <div class="form-group">
+                            <label>Categoría:</label>
+                            <div class="category-buttons">
+                                <button type="button" class="btn-cat"><i class="fa-solid fa-road"></i> Vías</button>
+                                <button type="button" class="btn-cat"><i class="fa-solid fa-lightbulb"></i> Alumbrado</button>
+                                <button type="button" class="btn-cat"><i class="fa-solid fa-tree"></i> Parques</button>
+                                <button type="button" class="btn-cat"><i class="fa-solid fa-droplet"></i> Agua</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" id="ubicacion" placeholder="Buscar dirección o seleccionar en el mapa...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descripcion">Descripción:</label>
+                            <textarea id="descripcion" rows="4" placeholder="Describe el problema en detalle..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary"><i class="fa-solid fa-upload"></i> Subir Foto</button>
+                            <button type="submit" class="btn-primary">ENVIAR REPORTE</button>
+                        </div>
+                    </form>
+                </section>
+
+                <aside class="map-sidebar">
+                    <div class="card map-card">
+                        <h3><i class="fa-solid fa-location-dot"></i> MAPA INTERACTIVO DE GUICHÓN</h3>
+                        <div id="map-placeholder">
+                            <p>[ Mapa de Guichón Simulador ]</p>
+                            <div class="pin red" style="top: 30%; left: 40%;"></div>
+                            <div class="pin green" style="top: 60%; left: 30%;"></div>
+                            <div class="pin blue" style="top: 50%; left: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="info-box emergency">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <span>Emergencias: <strong>911</strong></span>
+                    </div>
+
+                    <div class="info-box municipality">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Municipio: <strong>2200</strong></span>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

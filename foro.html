@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexoGÜI - Foro Comunitario</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <h2>NexoGÜI</h2>
+                <p class="slogan">Conectamos tu comunidad</p>
+            </div>
+            
+            <nav class="menu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="reportar.html"><i class="fa-solid fa-circle-plus"></i> Reportar</a>
+                <a href="foro.html" class="active"><i class="fa-solid fa-comments"></i> Foro</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Ajustes</a>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-info">
+                    <span class="username" id="user-name">Cargando...</span>
+                    <span class="role" id="user-role">...</span>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header forum-header">
+                <div>
+                    <h1><i class="fa-solid fa-comments"></i> FORO COMUNITARIO</h1>
+                    <p class="subtitle">Espacio de debate, propuestas y avisos para los vecinos de Guichón.</p>
+                </div>
+                <button class="btn-primary" id="btn-nuevo-tema"><i class="fa-solid fa-plus"></i> Nueva Discusión</button>
+            </header>
+
+            <section class="card forum-filter-card">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-forum" placeholder="Buscar temas, palabras clave o vecinos...">
+                </div>
+                <div class="forum-categories-filter">
+                    <button class="btn-filter active" data-filter="todos">Todos</button>
+                    <button class="btn-filter" data-filter="propuesta">Propuestas</button>
+                    <button class="btn-filter" data-filter="debate">Debates</button>
+                    <button class="btn-filter" data-filter="aviso">Avisos</button>
+                </div>
+            </section>
+
+            <div class="dashboard-grid layout-foro">
+                
+                <section class="forum-posts-container" id="forum-posts-list">
+                    <p class="loading-text">Cargando discusiones del foro...</p>
+                </section>
+
+                <aside class="forum-sidebar">
+                    <div class="card info-forum-card">
+                        <h3><i class="fa-solid fa-gavel"></i> Normas del Foro</h3>
+                        <ul>
+                            <li>Mantener el respeto mutuo entre vecinos.</li>
+                            <li>Publicar temas relacionados exclusivamente con Guichón.</li>
+                            <li>Evitar agresiones y noticias falsas.</li>
+                        </ul>
+                    </div>
+
+                    <div class="info-box municipality">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Vecinos Activos hoy: <strong>142</strong></span>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

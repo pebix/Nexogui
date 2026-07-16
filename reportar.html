@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexoGÜI - Reportar Problema</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- BARRA LATERAL (El enlace de Reportar ahora apunta aquí y está activo) -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">N</div>
+                <h2>NexoGÜI</h2>
+                <p class="slogan">Conectamos tu comunidad</p>
+            </div>
+            
+            <nav class="menu">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a>
+                <a href="reportar.html" class="active"><i class="fa-solid fa-circle-plus"></i> Reportar</a>
+                <a href="foro.html"><i class="fa-solid fa-comments"></i> Foro</a>
+                <a href="#"><i class="fa-solid fa-gear"></i> Ajustes</a>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-info">
+                    <span class="username" id="user-name">Cargando...</span>
+                    <span class="role" id="user-role">...</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTENIDO PRINCIPAL DE REPORTAR -->
+        <main class="main-content">
+            <header class="main-header">
+                <h1><i class="fa-solid fa-square-check"></i> REPORTAR</h1>
+                <p class="subtitle">Reporta un problema en tu ciudad y ayudanos a mejorar Guichón.</p>
+            </header>
+
+            <div class="dashboard-grid layout-reportar">
+                
+                <!-- FORMULARIO DETALLADO (PASO A PASO) -->
+                <section class="card report-form-card dynamic-form">
+                    <form id="full-report-form">
+                        
+                        <!-- PASO 1 -->
+                        <div class="step-container">
+                            <h3 class="step-title">1. Selecciona una categoría</h3>
+                            <div class="category-buttons grid-categories">
+                                <button type="button" class="btn-cat-full" data-cat="vias"><i class="fa-solid fa-road"></i> Vías</button>
+                                <button type="button" class="btn-cat-full" data-cat="alumbrado"><i class="fa-solid fa-lightbulb"></i> Alumbrado</button>
+                                <button type="button" class="btn-cat-full" data-cat="parques"><i class="fa-solid fa-tree"></i> Parques</button>
+                                <button type="button" class="btn-cat-full" data-cat="agua"><i class="fa-solid fa-droplet"></i> Agua</button>
+                                <button type="button" class="btn-cat-full" data-cat="otro"><i class="fa-solid fa-ellipsis"></i> Otro</button>
+                            </div>
+                        </div>
+
+                        <!-- PASO 2 -->
+                        <div class="step-container">
+                            <h3 class="step-title">2. Ubicación del problema</h3>
+                            <div class="form-group input-icon-container">
+                                <i class="fa-solid fa-location-dot input-icon"></i>
+                                <input type="text" id="ubicacion-full" placeholder="Buscar dirección o seleccionar en el mapa...">
+                            </div>
+                            <button type="button" class="btn-location-gps" id="btn-gps">
+                                <i class="fa-solid fa-location-crosshairs"></i> Usar mi ubicación actual
+                            </button>
+                        </div>
+
+                        <!-- PASO 3 -->
+                        <div class="step-container">
+                            <h3 class="step-title">3. Descripción del problema</h3>
+                            <div class="form-group">
+                                <textarea id="descripcion-full" rows="5" maxlength="500" placeholder="Contanos qué está pasando, lo más detallado posible..."></textarea>
+                                <div class="char-counter"><span id="char-count">0</span>/500</div>
+                            </div>
+                        </div>
+
+                        <!-- PASO 4 -->
+                        <div class="step-container">
+                            <h3 class="step-title">4. Agregá fotos <span class="optional">(opcional)</span></h3>
+                            <div class="drag-drop-zone" id="drop-zone">
+                                <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+                                <p class="drag-text"><strong>Subir fotos</strong></p>
+                                <p class="drag-subtext">Arrastra o selecciona archivos</p>
+                                <p class="drag-info">Formatos JPG, PNG Max 5MB</p>
+                                <input type="file" id="file-input" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <!-- Vista previa de fotos seleccionadas -->
+                            <div id="preview-container" class="preview-grid"></div>
+                        </div>
+
+                        <!-- ACCIONES DEL FORMULARIO -->
+                        <div class="form-actions-bar">
+                            <button type="button" class="btn-cancelar" onclick="window.location.href='index.html'"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                            <button type="submit" class="btn-enviar-reporte">ENVIAR REPORTE <i class="fa-solid fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- COLUMNA DERECHA (MAPA Y CONTACTOS) -->
+                <aside class="map-sidebar">
+                    <div class="card map-card-full">
+                        <h3><i class="fa-solid fa-map-marked-alt"></i> MAPA DE GUICHÓN</h3>
+                        <div id="map-large-placeholder">
+                            <p>[ Visor del Mapa de Reportes ]</p>
+                            <!-- Controles simulados del mapa (+ / -) de tu maqueta -->
+                            <div class="map-controls">
+                                <button type="button">+</button>
+                                <button type="button">-</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-box emergency">
+                        <i class="fa-solid fa-phone-flip"></i>
+                        <span>Emergencias: <strong>911</strong></span>
+                    </div>
+
+                    <div class="info-box municipality">
+                        <i class="fa-solid fa-building"></i>
+                        <span>Municipio: <strong>2200</strong></span>
+                    </div>
+                </aside>
+
+            </div>
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
